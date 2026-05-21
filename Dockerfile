@@ -295,7 +295,7 @@
 # ENTRYPOINT ["tini", "-s", "--"]
 # CMD ["node", "openclaw.mjs", "gateway"]
 
-FROM node:22.13
+FROM node:22.22.3
 
 WORKDIR /app
 
