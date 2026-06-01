@@ -17,11 +17,12 @@ def home():
 
 @app.post("/task")
 async def task(data: dict):
+  # print("RAW DATA:", data)
   prompt = data["prompt"]
 
   completion = client.chat.completions.create(
     model="qwen/qwen3-coder-480b-a35b-instruct",
-    messages=[{"role":"user","content":""}],
+    messages=[{"role":"user","content":prompt}],
     temperature=0.7,
     top_p=0.8,
     max_tokens=4096,
